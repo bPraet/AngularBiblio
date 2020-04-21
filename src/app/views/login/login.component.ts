@@ -1,0 +1,27 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent implements OnInit {
+
+  constructor(private fb: FormBuilder, private authService: AuthenticationService) { }
+
+  loginForm = this.fb.group({
+    login: "",
+    motDePasse: ""
+  });
+
+  ngOnInit(): void {
+  }
+
+  onSubmit(){
+    console.log(this.authService.executeJWTAuthenticationService(this.loginForm.value.login, this.loginForm.value.motDePasse));
+    console.log(this.authService.getAuthenticatedToken);
+  }
+
+}
