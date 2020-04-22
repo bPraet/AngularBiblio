@@ -20,8 +20,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.authService.executeJWTAuthenticationService(this.loginForm.value.login, this.loginForm.value.motDePasse));
+    this.authService.executeJWTAuthenticationService(this.loginForm.value.login, this.loginForm.value.motDePasse);
     console.log(this.authService.getAuthenticatedToken);
+    this.authService.test();
   }
 
 }

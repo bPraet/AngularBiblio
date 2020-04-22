@@ -28,18 +28,17 @@ export class AuthenticationService {
     sessionStorage.removeItem(TOKEN);
   }
 
+  test(){
+    return this.http.get("http://localhost:8080/livres").subscribe(livres => console.log(livres));
+  }
+
   executeJWTAuthenticationService(username, password) {
-    return this.http.post<any>(
-    `${API_URL}/authenticate`, {
-    username,
-    password}).pipe(
-      map(
+    return this.http.post<any>(`${API_URL}/authenticate`, {username, password}).subscribe(
         data => {
           sessionStorage.setItem(AUTHENTICATED_USER, username);
           sessionStorage.setItem(TOKEN, `Bearer ${data.token}`);
           return data;
         }
       )
-    );
   }
 }

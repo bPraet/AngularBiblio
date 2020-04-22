@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptorAuthService } from './services/http-interceptor-auth.service';
 import { LoginComponent } from './views/login/login.component';
-import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,9 +15,10 @@ import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    AppRoutingModule
+    ReactiveFormsModule
+    
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
