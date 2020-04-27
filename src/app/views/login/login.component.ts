@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,11 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private authService: AuthenticationService) { }
+  constructor(private fb: FormBuilder, private authService: AuthenticationService, private router: Router) {
+    if(this.authService.isUserLoggedIn()){
+      this.router.navigate(['catalogue']);
+    }
+   }
 
   loginForm = this.fb.group({
     login: "",
@@ -21,7 +26,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     this.authService.executeJWTAuthenticationService(this.loginForm.value.login, this.loginForm.value.motDePasse);
-    console.log(this.authService.getAuthenticatedToken);
     this.authService.test();
   }
 

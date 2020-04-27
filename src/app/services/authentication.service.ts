@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { API_URL } from 'src/app/app.constants';
 
 export const TOKEN = 'token';
-export const AUTHENTICATED_USER = 'authenticatedUSser';
+export const AUTHENTICATED_USER = 'authenticatedUser';
 
 @Injectable({
   providedIn: 'root'
