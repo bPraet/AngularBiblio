@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
     if(this.authService.isUserLoggedIn()){
       this.router.navigate(['catalogue']);
     }
-   }
+  }
 
   loginForm = this.fb.group({
     login: "",
@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     this.authService.executeJWTAuthenticationService(this.loginForm.value.login, this.loginForm.value.motDePasse);
-    this.authService.test();
   }
 
 }

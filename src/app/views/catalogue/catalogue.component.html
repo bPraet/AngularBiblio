@@ -1,1 +1,12 @@
 <div>catalogue</div>
+
+<ul>
+    Dispo
+    <li *ngFor="let livre of livresDispo">
+      {{ livre.nom }}
+    </li>
+    Non Dispo
+    <li *ngFor="let livre of livresIndispo">
+        {{ livre.nom }}
+    </li>
+</ul>

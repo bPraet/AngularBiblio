@@ -28,10 +28,6 @@ export class AuthenticationService {
     sessionStorage.removeItem(TOKEN);
   }
 
-  test(){
-    return this.http.get("http://localhost:8080/livres").subscribe(livres => console.log(livres));
-  }
-
   executeJWTAuthenticationService(username, password) {
     return this.http.post<any>(`${API_URL}/authenticate`, {username, password}).subscribe(
         data => {
