@@ -11,7 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
-import { CatalogueComponent } from './views/catalogue/catalogue.component'; 
+import { CatalogueComponent } from './views/catalogue/catalogue.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CatalogueComponent } from './views/catalogue/catalogue.component';
     MatInputModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

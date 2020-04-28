@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { API_URL } from 'src/app/app.constants';
+import { Router } from '@angular/router';
 
 export const TOKEN = 'token';
 export const AUTHENTICATED_USER = 'authenticatedUser';
@@ -11,7 +12,7 @@ export const AUTHENTICATED_USER = 'authenticatedUser';
 })
 export class AuthenticationService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
   getAuthenticatedUser() {
     return sessionStorage.getItem(AUTHENTICATED_USER);
   }
@@ -33,6 +34,7 @@ export class AuthenticationService {
         data => {
           sessionStorage.setItem(AUTHENTICATED_USER, username);
           sessionStorage.setItem(TOKEN, `Bearer ${data.token}`);
+          this.router.navigate(['catalogue']);
           return data;
         }
       )
