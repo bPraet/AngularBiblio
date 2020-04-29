@@ -1,6 +1,6 @@
 <div id="formContainer">
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
+    <div id="erreur">Identifiants incorrects</div>
     <mat-form-field>
       <mat-label>login</mat-label>
       <input matInput formControlName="login">

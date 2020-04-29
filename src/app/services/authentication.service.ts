@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 import { API_URL } from 'src/app/app.constants';
 import { Router } from '@angular/router';
 
@@ -30,12 +29,15 @@ export class AuthenticationService {
   }
 
   executeJWTAuthenticationService(username, password) {
-    return this.http.post<any>(`${API_URL}/authenticate`, {username, password}).subscribe(
+    this.http.post<any>(`${API_URL}/authenticate`, {username, password}).subscribe(
         data => {
           sessionStorage.setItem(AUTHENTICATED_USER, username);
           sessionStorage.setItem(TOKEN, `Bearer ${data.token}`);
           this.router.navigate(['catalogue']);
-          return data;
+        },
+        error => {
+          console.log("identifiants invalides");
+          document.getElementById('erreur').style.visibility = "visible";
         }
       )
   }
