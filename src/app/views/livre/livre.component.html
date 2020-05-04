@@ -1,1 +1,19 @@
-<div>livre works!</div>
+<div id="bookContainer">
+    
+    <div id="available" *ngIf="livre.hasOwnProperty('availableNow')">
+        <h2>Disponibles maintenant</h2><hr>
+    </div>
+
+    <div id="soon" *ngIf="livre.hasOwnProperty('availableSoon')">
+        <h2>Disponibles bientôt</h2><hr>
+    </div>
+
+    <div id="notAvailable" *ngIf="livre.hasOwnProperty('notAvailable')">
+        <h2>Pas disponibles</h2><hr>
+    </div>
+
+    <div id="nothing" *ngIf="livre.hasOwnProperty('nothingAvailable')">
+        <h2>Malheureusement rien n'est disponible pour le moment</h2><hr>
+    </div>
+
+</div>

@@ -10,7 +10,7 @@ import { LivreService } from 'src/app/services/livre.service';
 })
 export class LivreComponent implements OnInit {
 
-  livre;
+  livre: Object = {};
 
   constructor(private authService: AuthenticationService, private router: Router, private livresServ: LivreService, private route: ActivatedRoute) {
     if(!this.authService.isUserLoggedIn()){
@@ -20,7 +20,7 @@ export class LivreComponent implements OnInit {
 
   ngOnInit(): void {
     this.livresServ.getLivre(this.route.snapshot.params.id).subscribe(livre =>{
-      console.log(livre);
+      this.livre = livre;
     })
   }
 
