@@ -13,4 +13,8 @@ export class LivreService {
     return this.http.get(`${API_URL}/livres`);
   }
 
+  getLivre(id){
+    return this.http.get(`${API_URL}/livre/${id}`);
+  }
+
 }

@@ -1,23 +1,46 @@
 <div id="bookContainer">
   <div *ngFor="let livre of livresDispo" class="book">
-    <mat-card routerLink="/">
+    <mat-card>
+      <div [routerLink]="['/livre', livre.id]">
       <mat-card-header>
         <mat-card-title>{{livre.nom}}</mat-card-title>
         <mat-card-subtitle>{{livre.auteur}}</mat-card-subtitle>
       </mat-card-header>
       <span class="bookImg"><img *ngIf="livre.imageSet[0]" mat-card-image src="assets/{{livre.imageSet[0].lien}}" alt="{{livre.imageSet[0].description}}">
-        <img *ngIf="!livre.imageSet[0]" mat-card-image src="assets/images/placeholder.jpg" alt="Placeholder"></span>
+      <img *ngIf="!livre.imageSet[0]" mat-card-image src="assets/images/placeholder.jpg" alt="Placeholder"></span>
+      </div>
+      <mat-card-content>
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>{{livre.edition}}</mat-panel-title>
+            </mat-expansion-panel-header>
+            {{livre.synopsis}}
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card-content>
     </mat-card>
   </div>
 
   <div *ngFor="let livre of livresIndispo" class="book">
     <mat-card>
+      <div [routerLink]="['/livre', livre.id]">
       <mat-card-header>
         <mat-card-title>{{livre.nom}}</mat-card-title>
         <mat-card-subtitle>{{livre.auteur}}</mat-card-subtitle>
       </mat-card-header>
       <span class="bookImg"><img *ngIf="livre.imageSet[0]" mat-card-image src="assets/{{livre.imageSet[0].lien}}" alt="{{livre.imageSet[0].description}}">
-        <img *ngIf="!livre.imageSet[0]" mat-card-image src="assets/images/placeholder.jpg" alt="Placeholder"></span>
+      <img *ngIf="!livre.imageSet[0]" mat-card-image src="assets/images/placeholder.jpg" alt="Placeholder"></span>
+      </div>
+      <mat-card-content>
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>{{livre.edition}}</mat-panel-title>
+            </mat-expansion-panel-header>
+            {{livre.synopsis}}
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card-content>
     </mat-card>
   </div>
-</div>

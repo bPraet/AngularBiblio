@@ -14,13 +14,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { CatalogueComponent } from './views/catalogue/catalogue.component';
 import { MatCardModule } from '@angular/material/card';
 import { InscriptionComponent } from './views/inscription/inscription.component';
+import { LivreComponent } from './views/livre/livre.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CatalogueComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    LivreComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { InscriptionComponent } from './views/inscription/inscription.component'
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
