@@ -2,6 +2,16 @@
     
     <div id="available" *ngIf="livre.hasOwnProperty('availableNow')">
         <h2>Disponibles maintenant</h2><hr>
+        <div *ngFor="let livre of livre['availableNow']" class="book">
+            <mat-accordion>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>N°{{livre.exemplaire.id}} {{livre.exemplaire.etat.nom}} {{livre.exemplaire.bibliotheque.nom}}</mat-panel-title>
+                  </mat-expansion-panel-header>
+                  {{livre.exemplaire.id}}
+                </mat-expansion-panel>
+              </mat-accordion>
+        </div>
     </div>
 
     <div id="soon" *ngIf="livre.hasOwnProperty('availableSoon')">

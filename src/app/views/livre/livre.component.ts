@@ -21,6 +21,7 @@ export class LivreComponent implements OnInit {
   ngOnInit(): void {
     this.livresServ.getLivre(this.route.snapshot.params.id).subscribe(livre =>{
       this.livre = livre;
+      console.log(livre);
     })
   }
 
