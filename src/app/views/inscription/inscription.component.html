@@ -1,0 +1,40 @@
+<div id="formContainer">
+    <form [formGroup]="inscriptionForm" (ngSubmit)="onSubmit()">
+      <div id="erreur">{{ inscriptionError }}</div>
+      <mat-form-field>
+        <mat-label>nom</mat-label>
+        <input matInput formControlName="nom" required>
+      </mat-form-field><br>
+      <mat-form-field>
+        <mat-label>prénom</mat-label>
+        <input matInput formControlName="prenom" required>
+      </mat-form-field><br>
+      <mat-form-field>
+        <mat-label>login</mat-label>
+        <input matInput formControlName="login" required>
+      </mat-form-field><br>
+      <mat-form-field>
+        <mat-label>mot de passe</mat-label>
+        <input matInput type="password" formControlName="motDePasse" required>
+      </mat-form-field><br>
+      <mat-form-field>
+        <mat-label>email</mat-label>
+        <input matInput formControlName="email" type="email" required>
+      </mat-form-field><br>
+      <mat-form-field>
+        <mat-label>telephone</mat-label>
+        <input matInput formControlName="telephone" type="tel" required>
+      </mat-form-field><br>
+      <mat-form-field>
+        <mat-label>dNaissance</mat-label>
+        <input matInput formControlName="dNaissance" type="date" required>
+      </mat-form-field><br>
+      <mat-form-field>
+        <mat-label>adresse</mat-label>
+        <input matInput formControlName="adresse" required>
+      </mat-form-field><br>
+      <br>
+      <button mat-raised-button type="submit">Inscription</button>
+    </form>
+    
+</div>

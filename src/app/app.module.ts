@@ -13,12 +13,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { CatalogueComponent } from './views/catalogue/catalogue.component';
 import { MatCardModule } from '@angular/material/card';
+import { InscriptionComponent } from './views/inscription/inscription.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CatalogueComponent
+    CatalogueComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,

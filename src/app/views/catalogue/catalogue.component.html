@@ -1,6 +1,6 @@
 <div id="bookContainer">
   <div *ngFor="let livre of livresDispo" class="book">
-    <mat-card>
+    <mat-card routerLink="/">
       <mat-card-header>
         <mat-card-title>{{livre.nom}}</mat-card-title>
         <mat-card-subtitle>{{livre.auteur}}</mat-card-subtitle>

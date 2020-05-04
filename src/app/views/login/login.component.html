@@ -3,14 +3,15 @@
     <div id="erreur">Identifiants incorrects</div>
     <mat-form-field>
       <mat-label>login</mat-label>
-      <input matInput formControlName="login">
+      <input matInput formControlName="login" required>
     </mat-form-field><br>
     <mat-form-field>
       <mat-label>mot de passe</mat-label>
-      <input matInput type="password" formControlName="motDePasse">
+      <input matInput type="password" formControlName="motDePasse" required>
     </mat-form-field>
     <br>
-    <button mat-raised-button type="submit">Connexion</button>
+    <button mat mat-raised-button type="button" routerLink="/inscription">Inscription</button>
+    <button id="connexionBtn" mat-raised-button type="submit">Connexion</button>
   </form>
   
 </div>
