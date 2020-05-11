@@ -11,6 +11,7 @@ import { LivreService } from 'src/app/services/livre.service';
 export class LivreComponent implements OnInit {
 
   livre: Object = {};
+  locationMessage = "";
 
   constructor(private authService: AuthenticationService, private router: Router, private livresServ: LivreService, private route: ActivatedRoute) {
     if(!this.authService.isUserLoggedIn()){
@@ -23,6 +24,18 @@ export class LivreComponent implements OnInit {
       this.livre = livre;
       console.log(livre);
     })
+  }
+
+  location(idExemplaire){
+    this.livresServ.location(idExemplaire);
+  }
+
+  reservation(idExemplaire){
+    this.livresServ.reservation(idExemplaire);
+  }
+
+  dateMilitoDate(milisecondes){
+    return new Date(milisecondes).toISOString().slice(0,10);
   }
 
 }

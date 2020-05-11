@@ -1,14 +1,16 @@
 <div id="bookContainer">
-    
+
     <div id="available" *ngIf="livre.hasOwnProperty('availableNow')">
         <h2>Disponibles maintenant</h2><hr>
+        <div id="locationMessage">{{ locationMessage }}</div>
         <div *ngFor="let livre of livre['availableNow']" class="book">
             <mat-accordion>
                 <mat-expansion-panel>
                   <mat-expansion-panel-header>
                     <mat-panel-title>N°{{livre.exemplaire.id}} {{livre.exemplaire.etat.nom}} {{livre.exemplaire.bibliotheque.nom}}</mat-panel-title>
                   </mat-expansion-panel-header>
-                  {{livre.exemplaire.id}}
+                  <span *ngIf="livre.exemplaire.etat.description != null">{{livre.exemplaire.etat.description}}<br></span><br>
+                  <button mat mat-raised-button color="primary" type="button" (click)="location(livre.exemplaire.id)">Louer</button>
                 </mat-expansion-panel>
               </mat-accordion>
         </div>
@@ -16,10 +18,33 @@
 
     <div id="soon" *ngIf="livre.hasOwnProperty('availableSoon')">
         <h2>Disponibles bientôt</h2><hr>
+        <div id="locationMessage">{{ locationMessage }}</div>
+        <div *ngFor="let livre of livre['availableSoon']" class="book">
+            <mat-accordion>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>N°{{livre.exemplaire.id}} {{livre.exemplaire.etat.nom}} {{livre.exemplaire.bibliotheque.nom}}</mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <span *ngIf="livre.exemplaire.etat.description != null">{{livre.exemplaire.etat.description}}<br></span><br>
+                  <button mat mat-raised-button color="primary" type="button" (click)="reservation(livre.exemplaire.id)">Réserver ({{dateMilitoDate(livre.dateRetour)}})</button>
+                </mat-expansion-panel>
+              </mat-accordion>
+        </div>
     </div>
 
     <div id="notAvailable" *ngIf="livre.hasOwnProperty('notAvailable')">
         <h2>Pas disponibles</h2><hr>
+        <div id="locationMessage">{{ locationMessage }}</div>
+        <div *ngFor="let livre of livre['notAvailable']" class="book">
+            <mat-accordion>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>N°{{livre.exemplaire.id}} {{livre.exemplaire.etat.nom}} {{livre.exemplaire.bibliotheque.nom}}</mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <span *ngIf="livre.exemplaire.etat.description != null">{{livre.exemplaire.etat.description}}<br></span><br>
+                </mat-expansion-panel>
+              </mat-accordion>
+        </div>
     </div>
 
     <div id="nothing" *ngIf="livre.hasOwnProperty('nothingAvailable')">

@@ -37,15 +37,12 @@ export class InscriptionComponent implements OnInit {
   onSubmit(){
     this.authService.register(this.inscriptionForm.value.nom, this.inscriptionForm.value.prenom, this.inscriptionForm.value.login, this.inscriptionForm.value.motDePasse,
       this.inscriptionForm.value.email, this.inscriptionForm.value.telephone, this.inscriptionForm.value.dNaissance, this.inscriptionForm.value.adresse).subscribe(
-      success => {
-        this.inscriptionError = "done";
-      },
-      error => {
-        if(error.error.text == "done")
+      response => {
+        if(response == "done")
           this.authService.executeJWTAuthenticationService(this.inscriptionForm.value.login, this.inscriptionForm.value.motDePasse);
         else{
           document.getElementById('erreur').style.visibility = "visible";
-          this.inscriptionError = error.error.text;
+          this.inscriptionError = response;
         }
       });
   }

@@ -15,7 +15,10 @@
             <mat-expansion-panel-header>
               <mat-panel-title>{{livre.edition}}</mat-panel-title>
             </mat-expansion-panel-header>
-            {{livre.synopsis}}
+            <span *ngFor="let theme of livre.themeSet">{{theme.nom}} </span>
+            <span *ngIf="livre.ean != null"><br>EAN: {{livre.ean}}</span>
+            <span *ngIf="livre.isbn != null"><br>ISBN: {{livre.isbn}}</span>
+            <br>{{livre.synopsis}}
           </mat-expansion-panel>
         </mat-accordion>
       </mat-card-content>
@@ -38,7 +41,10 @@
             <mat-expansion-panel-header>
               <mat-panel-title>{{livre.edition}}</mat-panel-title>
             </mat-expansion-panel-header>
-            {{livre.synopsis}}
+            <span *ngFor="let theme of livre.themeSet">{{theme.nom}} </span>
+            <span *ngIf="livre.ean != null"><br>EAN: {{livre.ean}}</span>
+            <span *ngIf="livre.isbn != null"><br>ISBN: {{livre.isbn}}</span>
+            <br>{{livre.synopsis}}
           </mat-expansion-panel>
         </mat-accordion>
       </mat-card-content>

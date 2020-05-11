@@ -53,6 +53,7 @@ export class AuthenticationService {
     
     return this.http.post(`${API_URL}/register`, {},
     {
+      responseType: 'text',
       params : {
         'nom' : nom,
         'prenom' : prenom, 
