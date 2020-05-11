@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { InscriptionComponent } from './views/inscription/inscription.component';
 import { LivreComponent } from './views/livre/livre.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { ProfilComponent } from './views/profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     LoginComponent,
     CatalogueComponent,
     InscriptionComponent,
-    LivreComponent
+    LivreComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
