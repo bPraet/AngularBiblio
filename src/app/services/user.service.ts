@@ -14,6 +14,7 @@ export class UserService {
   }
 
   modifyProfil(nom, prenom, login, mdp, dNaissance, adresse, telephone, email){
+
     return this.http.post(`${API_URL}/setProfil`, {},
     {
       responseType: 'text',
@@ -27,10 +28,14 @@ export class UserService {
         'telephone' : telephone,
         'email' : email
       }
-    }).subscribe(
-      response => {
-        console.log(response);
-      }
-    );
+    });
+  }
+
+  getAmendes(){
+    return this.http.get(`${API_URL}/amendes`);
+  }
+
+  getLocations(){
+    return this.http.get(`${API_URL}/locations`);
   }
 }

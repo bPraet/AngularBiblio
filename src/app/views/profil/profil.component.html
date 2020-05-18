@@ -16,7 +16,7 @@
         </mat-form-field><br>
         <mat-form-field>
           <mat-label>mot de passe</mat-label>
-          <input matInput type="password" formControlName="motDePasse" required>
+          <input matInput type="password" formControlName="motDePasse" >
         </mat-form-field><br>
         <mat-form-field>
           <mat-label>email</mat-label>
@@ -38,5 +38,14 @@
         <button mat-raised-button type="submit" id="modifyBtn">Modifier</button>
         <button mat-raised-button color="primary" (click)="logout()">Logout</button>
     </form>
-    
 </div>
+<br><hr>
+<h3>Locations</h3>
+<ul>
+  <span *ngFor="let location of locations"><li>Id: {{location.id}}</li></span>
+</ul>
+<hr>
+<h3>Amendes</h3>
+<ul>
+  <span *ngFor="let amende of amendes"><li>Id: {{amende.id}}, Montant: {{amende.montant}}€, Location n°: {{amende.idLocation}}</li></span>
+</ul>

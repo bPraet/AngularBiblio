@@ -12,6 +12,8 @@ import { FormBuilder } from '@angular/forms';
 export class ProfilComponent implements OnInit {
 
   profil;
+  amendes;
+  locations;
   profilError = "";
   profilForm;
 
@@ -30,21 +32,45 @@ export class ProfilComponent implements OnInit {
           nom: this.profil.nom,
           prenom: this.profil.prenom,
           login: this.profil.login,
-          motDePasse: this.profil.motDePasse,
+          motDePasse: "",
           email: this.profil.email,
           telephone: this.profil.telephone,
-          dNaissance: this.profil.dNaissance,
+          dNaissance: this.profil.dateNaissance,
           adresse: this.profil.adresse
         });
       }
     );
+
+    this.userService.getAmendes().subscribe(
+      amendes => {
+        this.amendes = amendes;
+        console.log(amendes);
+      }
+    );
+
+    this.userService.getLocations().subscribe(
+      locations => {
+        this.locations = locations;
+        console.log(locations);
+      }
+    )
+
   }
 
 
 
   modify(){
+
+    if(this.profilForm.value.motDePasse === "")
+      this.profilForm.value.motDePasse = this.profil.motDePasse;
+
     this.userService.modifyProfil(this.profilForm.value.nom, this.profilForm.value.prenom, this.profilForm.value.login, this.profilForm.value.motDePasse, this.profilForm.value.dNaissance,
-      this.profilForm.value.adresse, this.profilForm.value.telephone, this.profilForm.value.email);
+      this.profilForm.value.adresse, this.profilForm.value.telephone, this.profilForm.value.email).subscribe(
+        response => {
+          this.profilError = response;
+          document.getElementById('erreur').style.visibility = "visible";
+        }
+      );
   }
 
   logout(){
