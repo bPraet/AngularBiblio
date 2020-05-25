@@ -39,13 +39,43 @@
         <button mat-raised-button color="primary" (click)="logout()">Logout</button>
     </form>
 </div>
+
 <br><hr>
-<h3>Locations</h3>
-<ul>
-  <span *ngFor="let location of locations"><li>Id: {{location.id}}</li></span>
-</ul>
-<hr>
-<h3>Amendes</h3>
-<ul>
-  <span *ngFor="let amende of amendes"><li>Id: {{amende.id}}, Montant: {{amende.montant}}€, Location n°: {{amende.idLocation}}</li></span>
-</ul>
+
+<div *ngIf="!isAdmin">
+  <h3>Locations</h3>
+  <ul>
+    <span *ngFor="let location of locations"><li>Id: {{location.id}}, Date début: {{dateMilitoDate(location.dateDebut)}}, Date fin: {{dateMilitoDate(location.dateFin)}}, 
+      {{location.exemplaire.bibliotheque.nom}}, Exemplaire Id: {{location.exemplaire.id}}, Livre nom: {{location.exemplaire.livre.nom}}
+    </li></span>
+  </ul>
+  <hr>
+  <h3>Amendes</h3>
+  <ul>
+    <span *ngFor="let amende of amendes"><li>Id: {{amende.id}}, Montant: {{amende.montant}}€, Location n°: {{amende.idLocation}}</li></span>
+  </ul>
+</div>
+
+<div *ngIf="isAdmin">
+  <h3>Panneau d'administration</h3>
+  <button mat-raised-button color="primary" (click)="changeViewAdmin('bibli')">Bibliothèque</button>
+  <button mat-raised-button color="primary" (click)="changeViewAdmin('livre')">Livre</button>
+  <button mat-raised-button color="primary" (click)="changeViewAdmin('exemplaire')">Exemplaire</button>
+  <button mat-raised-button color="primary" (click)="changeViewAdmin('location')">Location</button>
+  <button mat-raised-button color="primary" (click)="changeViewAdmin('user')">Utilisateur</button>
+  <button mat-raised-button color="primary" (click)="changeViewAdmin('admin')">Administrateur</button>
+  <button mat-raised-button color="primary" (click)="changeViewAdmin('support')">Support</button>
+
+  <div *ngIf='bibli'>
+    <ul>
+      <span *ngFor="let bibliotheque of bibliotheques"><li>Id: {{bibliotheque.id}}, Nom: {{bibliotheque.nom}}</li></span>
+    </ul>
+  </div>
+  <div *ngIf='livre'>livre</div>
+  <div *ngIf='exemplaire'>exemplaire</div>
+  <div *ngIf='location'>location</div>
+  <div *ngIf='user'>user</div>
+  <div *ngIf='admin'>admin</div>
+  <div *ngIf='support'>support</div>
+
+</div>

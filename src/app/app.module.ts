@@ -17,6 +17,8 @@ import { InscriptionComponent } from './views/inscription/inscription.component'
 import { LivreComponent } from './views/livre/livre.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ProfilComponent } from './views/profil/profil.component';
+import { SupportComponent } from './views/support/support.component';
+import { AdminComponent } from './views/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ProfilComponent } from './views/profil/profil.component';
     CatalogueComponent,
     InscriptionComponent,
     LivreComponent,
-    ProfilComponent
+    ProfilComponent,
+    SupportComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

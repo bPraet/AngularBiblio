@@ -38,4 +38,9 @@ export class UserService {
   getLocations(){
     return this.http.get(`${API_URL}/locations`);
   }
+
+  getMessages(){
+    return this.http.get(`${API_URL}/support`);
+  }
+
 }
