@@ -1,22 +1,9 @@
-#profilContainer{
+#bibliContainer{
     padding-top: 100px;
-    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-#adminpanelContainer{
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-ul{
-    list-style-type: none;
 }
 
 #modifyBtn{

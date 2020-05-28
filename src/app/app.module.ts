@@ -19,6 +19,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { ProfilComponent } from './views/profil/profil.component';
 import { SupportComponent } from './views/support/support.component';
 import { AdminComponent } from './views/admin/admin.component';
+import { BibliAdminComponent } from './views/bibli-admin/bibli-admin.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AdminComponent } from './views/admin/admin.component';
     LivreComponent,
     ProfilComponent,
     SupportComponent,
-    AdminComponent
+    AdminComponent,
+    BibliAdminComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { InscriptionComponent } from './views/inscription/inscription.component'
 import { LivreComponent } from './views/livre/livre.component';
 import { ProfilComponent } from './views/profil/profil.component';
 import { SupportComponent } from './views/support/support.component';
+import { BibliAdminComponent } from './views/bibli-admin/bibli-admin.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'catalogue', component: CatalogueComponent },
   { path: 'livre/:id', component: LivreComponent},
   { path: 'profil', component: ProfilComponent},
-  { path: 'support', component: SupportComponent}
+  { path: 'support', component: SupportComponent},
+  { path: 'admin/bibli/:id', component: BibliAdminComponent}
 ];
 
 @NgModule({

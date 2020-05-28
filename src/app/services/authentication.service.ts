@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { API_URL } from 'src/app/app.constants';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { UserService } from './user.service';
 
 export const TOKEN = 'token';
 export const AUTHENTICATED_USER = 'authenticatedUser';
@@ -12,7 +13,7 @@ export const AUTHENTICATED_USER = 'authenticatedUser';
 })
 export class AuthenticationService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private userService: UserService) { }
 
   inscriptionError = "";
 
@@ -27,6 +28,16 @@ export class AuthenticationService {
     const user = sessionStorage.getItem(AUTHENTICATED_USER);
     return !(user === null);
   }
+
+  isAdmin(){
+    this.userService.getProfil().subscribe(
+      profil => {
+        if(profil['role'] == undefined || !this.isUserLoggedIn())
+          this.router.navigate(['login']);     
+      }
+    );
+  }
+
   logout() {
     sessionStorage.removeItem(AUTHENTICATED_USER);
     sessionStorage.removeItem(TOKEN);

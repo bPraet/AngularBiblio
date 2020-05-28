@@ -12,4 +12,28 @@ export class AdminService {
   getBibliotheques(){
     return this.http.get(`${API_URL}/admin/bibliotheques`);
   }
+
+  getBibliotheque(id){
+    return this.http.get(`${API_URL}/admin/bibliotheque/${id}`);
+  }
+
+  modifyBibli(id, nom, adresse, tel, email, web, description, amende, cotisation, nbLoc, dureePret, raison){
+    return this.http.post(`${API_URL}/admin/bibliotheque/${id}/update`, {},
+    {
+      responseType: 'text',
+      params : {
+        'nom' : nom,
+        'adresse' : adresse,
+        'tel' : tel,
+        'email' : email,
+        'web' : web,
+        'description' : description,
+        'amende' : amende,
+        'cotisation' : cotisation,
+        'nbLoc' : nbLoc,
+        'dureePret' : dureePret,
+        'raison' : raison
+      }
+    });
+  }
 }
