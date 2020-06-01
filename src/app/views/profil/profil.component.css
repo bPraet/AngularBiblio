@@ -28,6 +28,17 @@ ul{
     visibility: hidden;
 }
 
+.btn{
+    color: #990099;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.addBtn{
+    display: block;
+    margin: auto;
+}
+
 mat-form-field{
     width: 50vw;
 }

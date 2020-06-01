@@ -10,8 +10,10 @@
     <button mat-raised-button color="primary" (click)="changeViewAdmin('support')">Support</button>
   </div>
   <div *ngIf='bibli'>
+    <br>
+    <button mat-raised-button [routerLink]="['/admin/bibli/add']" class="addBtn">Ajouter</button>
     <ul>
-      <span *ngFor="let bibliotheque of bibliotheques"><li><a [routerLink]="['/admin/bibli', bibliotheque.id]">Update</a> | Delete&nbsp;&nbsp;&nbsp;&nbsp;Id: {{bibliotheque.id}}, Nom: {{bibliotheque.nom}}</li></span>
+      <span *ngFor="let bibliotheque of bibliotheques"><li><a [routerLink]="['/admin/bibli', bibliotheque.id]" class="btn">Update</a> | <a (click)="deleteBibli(bibliotheque.id)" class="btn">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;Id: {{bibliotheque.id}}, Nom: {{bibliotheque.nom}}</li></span>
     </ul>
   </div>
   <div *ngIf='livre'>livre</div>

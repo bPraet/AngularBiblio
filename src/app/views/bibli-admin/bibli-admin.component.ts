@@ -25,7 +25,6 @@ export class BibliAdminComponent implements OnInit {
     this.adminService.getBibliotheque(this.route.snapshot.params.id).subscribe(
       bibliotheque => {
         this.bibliotheque = bibliotheque;
-        console.log(this.bibliotheque);
 
         this.bibliForm = this.fb.group({
           nom: this.bibliotheque.nom,
@@ -46,11 +45,14 @@ export class BibliAdminComponent implements OnInit {
   }
 
   modify(){
-    console.log("coucou");
     this.adminService.modifyBibli(this.route.snapshot.params.id, this.bibliForm.value.nom, this.bibliForm.value.adresse, this.bibliForm.value.telephone, this.bibliForm.value.email, this.bibliForm.value.web,
       this.bibliForm.value.description, this.bibliForm.value.montantAmende, this.bibliForm.value.montantCotisation, this.bibliForm.value.nbLocation, this.bibliForm.value.dureePret, this.bibliForm.value.raison).subscribe(
         response => {
           this.bibliError = response;
+          document.getElementById('erreur').style.visibility = "visible";
+        },
+        err => {
+          this.bibliError = "Impossible d'effectuer la modification avec les informations entrées";
           document.getElementById('erreur').style.visibility = "visible";
         }
       );

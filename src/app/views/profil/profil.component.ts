@@ -19,7 +19,7 @@ export class ProfilComponent implements OnInit {
   profilForm;
   isAdmin = false;
 
-  bibli = true;
+  bibli = false;
   livre = false;
   exemplaire = false;
   location = false;
@@ -127,6 +127,26 @@ export class ProfilComponent implements OnInit {
         this.bibli = false;  this.livre = false;  this.exemplaire = false;  this.location = false;  this.user = false;  this.admin = false;  this.support = true;
         break;
     }  
+  }
+
+  addBibli(){
+
+  }
+
+  deleteBibli(id){
+    if(confirm("Etes-vous sûr ?")){
+      this.adminService.deleteBibli(id).subscribe(
+        response => {
+          this.adminService.getBibliotheques().subscribe(
+            bibliotheques => {
+              this.bibliotheques = bibliotheques;
+            }
+          );
+        }
+      )
+    }
+    
+
   }
 
 

@@ -36,4 +36,30 @@ export class AdminService {
       }
     });
   }
+  
+  addBibli(nom, adresse, tel, email, web, description, amende, cotisation, nbLoc, dureePret){
+    return this.http.post(`${API_URL}/admin/bibliotheque/add`, {},
+    {
+      responseType: 'text',
+      params : {
+        'nom' : nom,
+        'adresse' : adresse,
+        'tel' : tel,
+        'email' : email,
+        'web' : web,
+        'description' : description,
+        'amende' : amende,
+        'cotisation' : cotisation,
+        'nbLoc' : nbLoc,
+        'dureePret' : dureePret,
+      }
+    });
+  }
+
+  deleteBibli(id){
+    return this.http.post(`${API_URL}/admin/bibliotheque/${id}/remove`, {},
+    {
+      responseType: 'text'
+    });
+  }
 }

@@ -1,0 +1,51 @@
+<div id="bibliadminaddContainer">
+    <div id="bibliContainer">
+        <button mat-raised-button color="primary" (click)="back()">Retour</button>
+        <form [formGroup]="bibliForm" (ngSubmit)="add()">
+            <div id="erreur">{{ bibliError }}</div>
+            <mat-form-field>
+              <mat-label>nom</mat-label>
+              <input matInput formControlName="nom" required>
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>adresse</mat-label>
+              <input matInput formControlName="adresse" required>
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>telephone</mat-label>
+              <input matInput formControlName="telephone" type="tel" required>
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>email</mat-label>
+              <input matInput type="email" formControlName="email" required>
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>web</mat-label>
+              <input matInput formControlName="web" required>
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>description</mat-label>
+              <textarea matInput formControlName="description" required></textarea>
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>montant amende</mat-label>
+              <input matInput formControlName="montantAmende" required>
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>montant cotisation</mat-label>
+              <input matInput formControlName="montantCotisation" required>
+            </mat-form-field><br>
+            <mat-form-field>
+                <mat-label>nombre location</mat-label>
+                <input matInput formControlName="nbLocation" required>
+            </mat-form-field><br>
+            <mat-form-field>
+                <mat-label>durée prêt</mat-label>
+                <input matInput formControlName="dureePret" required>
+            </mat-form-field><br>
+            <br>
+            <button mat-raised-button type="submit" id="addBtn">Ajouter</button>
+        </form>
+    </div>
+    
+</div>

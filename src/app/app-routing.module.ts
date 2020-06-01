@@ -7,6 +7,7 @@ import { LivreComponent } from './views/livre/livre.component';
 import { ProfilComponent } from './views/profil/profil.component';
 import { SupportComponent } from './views/support/support.component';
 import { BibliAdminComponent } from './views/bibli-admin/bibli-admin.component';
+import { BibliAdminAddComponent } from './views/bibli-admin-add/bibli-admin-add.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,9 @@ const routes: Routes = [
   { path: 'livre/:id', component: LivreComponent},
   { path: 'profil', component: ProfilComponent},
   { path: 'support', component: SupportComponent},
-  { path: 'admin/bibli/:id', component: BibliAdminComponent}
+  { path: 'admin/bibli/add', component: BibliAdminAddComponent},
+  { path: 'admin/bibli/:id', component: BibliAdminComponent},
+  { path: '**', redirectTo: 'catalogue'}
 ];
 
 @NgModule({

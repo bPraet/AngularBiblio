@@ -20,6 +20,7 @@ import { ProfilComponent } from './views/profil/profil.component';
 import { SupportComponent } from './views/support/support.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { BibliAdminComponent } from './views/bibli-admin/bibli-admin.component';
+import { BibliAdminAddComponent } from './views/bibli-admin-add/bibli-admin-add.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BibliAdminComponent } from './views/bibli-admin/bibli-admin.component';
     ProfilComponent,
     SupportComponent,
     AdminComponent,
-    BibliAdminComponent
+    BibliAdminComponent,
+    BibliAdminAddComponent
   ],
   imports: [
     BrowserModule,
