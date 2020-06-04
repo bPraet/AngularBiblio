@@ -16,7 +16,13 @@
       <span *ngFor="let bibliotheque of bibliotheques"><li><a [routerLink]="['/admin/bibli', bibliotheque.id]" class="btn">Update</a> | <a (click)="deleteBibli(bibliotheque.id)" class="btn">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;Id: {{bibliotheque.id}}, Nom: {{bibliotheque.nom}}</li></span>
     </ul>
   </div>
-  <div *ngIf='livre'>livre</div>
+  <div *ngIf='livre'>
+    <br>
+    <button mat-raised-button [routerLink]="['/admin/livre/add']" class="addBtn">Ajouter</button>
+    <ul>
+      <span *ngFor="let livre of livres"><li><a [routerLink]="['/admin/livre', livre.id]" class="btn">Update</a>&nbsp;&nbsp;&nbsp;&nbsp;Id: {{livre.id}}, Nom: {{livre.nom}}</li></span>
+    </ul>
+  </div>
   <div *ngIf='exemplaire'>exemplaire</div>
   <div *ngIf='location'>location</div>
   <div *ngIf='user'>user</div>

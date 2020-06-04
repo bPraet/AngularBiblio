@@ -8,6 +8,8 @@ import { ProfilComponent } from './views/profil/profil.component';
 import { SupportComponent } from './views/support/support.component';
 import { BibliAdminComponent } from './views/bibli-admin/bibli-admin.component';
 import { BibliAdminAddComponent } from './views/bibli-admin-add/bibli-admin-add.component';
+import { LivreAdminComponent } from './views/livre-admin/livre-admin.component';
+import { LivreAdminAddComponent } from './views/livre-admin-add/livre-admin-add.component';
 
 
 const routes: Routes = [
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'support', component: SupportComponent},
   { path: 'admin/bibli/add', component: BibliAdminAddComponent},
   { path: 'admin/bibli/:id', component: BibliAdminComponent},
+  { path: 'admin/livre/add', component: LivreAdminAddComponent},
+  { path: 'admin/livre/:id', component: LivreAdminComponent},
   { path: '**', redirectTo: 'catalogue'}
 ];
 

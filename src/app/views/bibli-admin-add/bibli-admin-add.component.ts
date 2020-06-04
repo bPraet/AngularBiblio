@@ -14,7 +14,9 @@ export class BibliAdminAddComponent implements OnInit {
   bibliForm;
   bibliError = "";
 
-  constructor(private authService: AuthenticationService, private adminService: AdminService, private fb: FormBuilder, private location: Location) { }
+  constructor(private authService: AuthenticationService, private adminService: AdminService, private fb: FormBuilder, private location: Location) { 
+    this.authService.isAdmin();
+  }
 
   ngOnInit(): void {
     this.bibliForm = this.fb.group({

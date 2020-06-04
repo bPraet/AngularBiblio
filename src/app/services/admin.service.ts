@@ -62,4 +62,47 @@ export class AdminService {
       responseType: 'text'
     });
   }
+
+  getLivres(){
+    return this.http.get(`${API_URL}/admin/livres`);
+  }
+
+  getLivre(id){
+    return this.http.get(`${API_URL}/admin/livre/${id}`);
+  }
+
+  modifyLivre(id, nom, EAN, ISBN, edition, auteur, prix, synopsis, numerique, raison){
+    return this.http.post(`${API_URL}/admin/livre/${id}/update`, {},
+    {
+      responseType: 'text',
+      params : {
+        'nom' : nom,
+        'EAN' : EAN,
+        'ISBN' : ISBN,
+        'edition' : edition,
+        'auteur' : auteur,
+        'prix' : prix,
+        'synopsis' : synopsis,
+        'numerique' : numerique,
+        'raison' : raison
+      }
+    });
+  }
+
+  addLivre(nom, EAN, ISBN, edition, auteur, prix, synopsis, numerique){
+    return this.http.post(`${API_URL}/admin/livre/add`, {},
+    {
+      responseType: 'text',
+      params : {
+        'nom' : nom,
+        'EAN' : EAN,
+        'ISBN' : ISBN,
+        'edition' : edition,
+        'auteur' : auteur,
+        'prix' : prix,
+        'synopsis' : synopsis,
+        'numerique' : numerique,
+      }
+    });
+  }
 }

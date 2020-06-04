@@ -1,0 +1,44 @@
+<div id="livreadminaddContainer">
+    <div id="livreContainer">
+        <button mat-raised-button color="primary" (click)="back()">Retour</button>
+        <form [formGroup]="livreForm" (ngSubmit)="add()">
+            <div id="erreur">{{ livreError }}</div>
+            <mat-form-field>
+                <mat-label>nom</mat-label>
+                <input matInput formControlName="nom" required>
+              </mat-form-field><br>
+              <mat-form-field>
+                <mat-label>EAN</mat-label>
+                <input matInput formControlName="EAN">
+              </mat-form-field><br>
+              <mat-form-field>
+                <mat-label>ISBN</mat-label>
+                <input matInput formControlName="ISBN">
+              </mat-form-field><br>
+              <mat-form-field>
+                <mat-label>edition</mat-label>
+                <input matInput formControlName="edition" required>
+              </mat-form-field><br>
+              <mat-form-field>
+                <mat-label>auteur</mat-label>
+                <input matInput formControlName="auteur" required>
+              </mat-form-field><br>
+              <mat-form-field>
+                <mat-label>prix</mat-label>
+                <input matInput formControlName="prix" required>
+              </mat-form-field><br>
+              <mat-form-field>
+                <mat-label>synopsis</mat-label>
+                <input matInput formControlName="synopsis" required>
+              </mat-form-field><br>
+              <label>Numérique ?</label><br>
+              <mat-radio-group aria-label="Numérique" formControlName="numerique">
+                  <mat-radio-button value="true">Oui</mat-radio-button> 
+                  <mat-radio-button value="false">Non</mat-radio-button> 
+              </mat-radio-group><br>
+            <br>
+            <button mat-raised-button type="submit" id="addBtn">Ajouter</button>
+        </form>
+    </div>
+    
+</div>

@@ -21,6 +21,9 @@ import { SupportComponent } from './views/support/support.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { BibliAdminComponent } from './views/bibli-admin/bibli-admin.component';
 import { BibliAdminAddComponent } from './views/bibli-admin-add/bibli-admin-add.component';
+import { LivreAdminComponent } from './views/livre-admin/livre-admin.component';
+import { LivreAdminAddComponent } from './views/livre-admin-add/livre-admin-add.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { BibliAdminAddComponent } from './views/bibli-admin-add/bibli-admin-add.
     SupportComponent,
     AdminComponent,
     BibliAdminComponent,
-    BibliAdminAddComponent
+    BibliAdminAddComponent,
+    LivreAdminComponent,
+    LivreAdminAddComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import { BibliAdminAddComponent } from './views/bibli-admin-add/bibli-admin-add.
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatRadioModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

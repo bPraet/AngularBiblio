@@ -1,0 +1,24 @@
+#livreContainer{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#modifyBtn{
+    float: right;
+}
+
+#erreur{
+    text-align: center;
+    visibility: hidden;
+}
+
+mat-form-field{
+    width: 50vw;
+}
+
+mat-radio-button{
+    margin-right: 40px;
+}
