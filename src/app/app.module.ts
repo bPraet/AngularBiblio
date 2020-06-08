@@ -24,6 +24,8 @@ import { BibliAdminAddComponent } from './views/bibli-admin-add/bibli-admin-add.
 import { LivreAdminComponent } from './views/livre-admin/livre-admin.component';
 import { LivreAdminAddComponent } from './views/livre-admin-add/livre-admin-add.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { ExemplaireAdminComponent } from './views/exemplaire-admin/exemplaire-admin.component';
+import { ExemplaireAdminAddComponent } from './views/exemplaire-admin-add/exemplaire-admin-add.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import {MatRadioModule} from '@angular/material/radio';
     BibliAdminComponent,
     BibliAdminAddComponent,
     LivreAdminComponent,
-    LivreAdminAddComponent
+    LivreAdminAddComponent,
+    ExemplaireAdminComponent,
+    ExemplaireAdminAddComponent
   ],
   imports: [
     BrowserModule,

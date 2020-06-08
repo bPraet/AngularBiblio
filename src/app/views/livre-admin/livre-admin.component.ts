@@ -24,7 +24,6 @@ export class LivreAdminComponent implements OnInit {
     this.adminService.getLivre(this.route.snapshot.params.id).subscribe(
       livre => {
         this.livre = livre;
-        console.log(livre);
         this.livreForm = this.fb.group({
           nom: this.livre.nom,
           EAN: this.livre.ean,

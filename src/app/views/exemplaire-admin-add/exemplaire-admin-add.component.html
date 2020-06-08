@@ -1,0 +1,23 @@
+<div id="exemplaireadminContainer">
+    <div id="exemplaireContainer">
+        <button mat-raised-button color="primary" (click)="back()">Retour</button><br>
+        <form [formGroup]="exemplaireForm" (ngSubmit)="add()">
+            <br><div id="erreur">{{ exemplaireError }}</div>
+            <mat-form-field>
+              <mat-label>id Etat (1: Neuf, 2: Légèrement abimé)</mat-label>
+              <input matInput formControlName="idEtat" required>
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>id Livre</mat-label>
+              <input matInput formControlName="idLivre" required>
+            </mat-form-field><br>
+            <mat-form-field>
+                <mat-label>id Bibliotheque</mat-label>
+                <input matInput formControlName="idBibliotheque" required>
+              </mat-form-field><br>
+            <br>
+            <button mat-raised-button type="submit" id="addBtn">Ajouter</button>
+        </form>
+    </div>
+    
+</div>

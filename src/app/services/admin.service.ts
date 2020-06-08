@@ -105,4 +105,43 @@ export class AdminService {
       }
     });
   }
+
+  getExemplaires(){
+    return this.http.get(`${API_URL}/admin/exemplaires`);
+  }
+
+  getExemplaire(id){
+    return this.http.get(`${API_URL}/admin/exemplaire/${id}`);
+  }
+
+  modifyExemplaire(id, idEtat, disponible, raison){
+    return this.http.post(`${API_URL}/admin/exemplaire/${id}/update`, {},
+    {
+      responseType: 'text',
+      params : {
+        'idEtat' : idEtat,
+        'disponible' : disponible,
+        'raison' : raison
+      }
+    });
+  }
+
+  addExemplaire(idEtat, idLivre, idBibliotheque){
+    return this.http.post(`${API_URL}/admin/exemplaire/add`, {},
+    {
+      responseType: 'text',
+      params : {
+        'idEtat' : idEtat,
+        'idLivre' : idLivre,
+        'idBibliotheque' : idBibliotheque
+      }
+    });
+  }
+
+  deleteExemplaire(id){
+    return this.http.post(`${API_URL}/admin/exemplaire/${id}/remove`, {},
+    {
+      responseType: 'text'
+    });
+  }
 }

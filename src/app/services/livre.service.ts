@@ -27,8 +27,8 @@ export class LivreService {
       }
     }).subscribe(
       response => {
+        alert(response);
         this.router.navigate(['catalogue']);
-        console.log(response);
       }
     );
   }
@@ -42,8 +42,8 @@ export class LivreService {
       }
     }).subscribe(
       response => {
+        alert(response);
         this.router.navigate(['catalogue']);
-        console.log(response);
       }
     );
   }

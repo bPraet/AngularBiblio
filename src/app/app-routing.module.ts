@@ -10,6 +10,8 @@ import { BibliAdminComponent } from './views/bibli-admin/bibli-admin.component';
 import { BibliAdminAddComponent } from './views/bibli-admin-add/bibli-admin-add.component';
 import { LivreAdminComponent } from './views/livre-admin/livre-admin.component';
 import { LivreAdminAddComponent } from './views/livre-admin-add/livre-admin-add.component';
+import { ExemplaireAdminAddComponent } from './views/exemplaire-admin-add/exemplaire-admin-add.component';
+import { ExemplaireAdminComponent } from './views/exemplaire-admin/exemplaire-admin.component';
 
 
 const routes: Routes = [
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: 'admin/bibli/:id', component: BibliAdminComponent},
   { path: 'admin/livre/add', component: LivreAdminAddComponent},
   { path: 'admin/livre/:id', component: LivreAdminComponent},
+  { path: 'admin/exemplaire/add', component: ExemplaireAdminAddComponent},
+  { path: 'admin/exemplaire/:id', component: ExemplaireAdminComponent},
   { path: '**', redirectTo: 'catalogue'}
 ];
 

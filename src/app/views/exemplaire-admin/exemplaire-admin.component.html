@@ -1,0 +1,25 @@
+<div id="exemplaireadminContainer">
+    <div id="exemplaireContainer" *ngIf="exemplaire">
+        <button mat-raised-button color="primary" (click)="back()">Retour</button><br>
+        Exemplaire n°{{exemplaire.id}} | Livre: (id: {{exemplaire.livre.id}}) {{exemplaire.livre.nom}}
+        <form [formGroup]="exemplaireForm" (ngSubmit)="modify()">
+            <br><div id="erreur">{{ exemplaireError }}</div>
+            <mat-form-field>
+              <mat-label>id Etat (1: Neuf, 2: Légèrement abimé)</mat-label>
+              <input matInput formControlName="idEtat" required>
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Raison de la modification</mat-label>
+              <input matInput formControlName="raison" required>
+            </mat-form-field><br>
+            <label>Disponible ?</label><br>
+            <mat-radio-group aria-label="Disponible" formControlName="disponible">
+                <mat-radio-button value="true" [checked]="exemplaire.disponible">Oui</mat-radio-button> 
+                <mat-radio-button value="false" [checked]="!exemplaire.disponible">Non</mat-radio-button> 
+            </mat-radio-group><br>
+            <br>
+            <button mat-raised-button type="submit" id="modifyBtn">Modifier</button>
+        </form>
+    </div>
+    
+</div>

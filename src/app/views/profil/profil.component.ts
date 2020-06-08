@@ -29,6 +29,7 @@ export class ProfilComponent implements OnInit {
 
   bibliotheques;
   livres;
+  exemplaires;
 
   constructor(private authService: AuthenticationService, private router: Router, private userService: UserService, private adminService: AdminService, private fb: FormBuilder) { 
     if(!this.authService.isUserLoggedIn()){
@@ -119,6 +120,11 @@ export class ProfilComponent implements OnInit {
         break;
       case 'exemplaire':
         this.bibli = false;  this.livre = false;  this.exemplaire = true;  this.location = false;  this.user = false;  this.admin = false;  this.support = false;
+        this.adminService.getExemplaires().subscribe(
+          exemplaires => {
+            this.exemplaires = exemplaires;
+          }
+        );
         break;
       case 'location':
         this.bibli = false;  this.livre = false;  this.exemplaire = false;  this.location = true;  this.user = false;  this.admin = false;  this.support = false;
@@ -142,6 +148,20 @@ export class ProfilComponent implements OnInit {
           this.adminService.getBibliotheques().subscribe(
             bibliotheques => {
               this.bibliotheques = bibliotheques;
+            }
+          );
+        }
+      )
+    }
+  }
+
+  deleteExemplaire(id){
+    if(confirm("Etes-vous sûr ?")){
+      this.adminService.deleteExemplaire(id).subscribe(
+        response => {
+          this.adminService.getExemplaires().subscribe(
+            exemplaires => {
+              this.exemplaires = exemplaires;
             }
           );
         }
