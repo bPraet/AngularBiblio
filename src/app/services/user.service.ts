@@ -43,4 +43,8 @@ export class UserService {
     return this.http.get(`${API_URL}/support`);
   }
 
+  getCotisations(){
+    return this.http.get(`${API_URL}/cotisations`);
+  }
+
 }

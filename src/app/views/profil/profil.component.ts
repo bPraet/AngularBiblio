@@ -14,7 +14,8 @@ export class ProfilComponent implements OnInit {
 
   profil;
   amendes;
-  locations;
+  locationsP;
+  cotisations;
   profilError = "";
   profilForm;
   isAdmin = false;
@@ -30,6 +31,7 @@ export class ProfilComponent implements OnInit {
   bibliotheques;
   livres;
   exemplaires;
+  locations;
 
   constructor(private authService: AuthenticationService, private router: Router, private userService: UserService, private adminService: AdminService, private fb: FormBuilder) { 
     if(!this.authService.isUserLoggedIn()){
@@ -69,7 +71,14 @@ export class ProfilComponent implements OnInit {
 
     this.userService.getLocations().subscribe(
       locations => {
-        this.locations = locations;
+        this.locationsP = locations;
+      }
+    )
+
+    this.userService.getCotisations().subscribe(
+      cotisations => {
+        this.cotisations = cotisations;
+        console.log(cotisations);
       }
     )
 
@@ -128,6 +137,12 @@ export class ProfilComponent implements OnInit {
         break;
       case 'location':
         this.bibli = false;  this.livre = false;  this.exemplaire = false;  this.location = true;  this.user = false;  this.admin = false;  this.support = false;
+        this.adminService.getLocations().subscribe(
+          locations => {
+            console.log(locations);
+            this.locations = locations;
+          }
+        );
         break;
       case 'user':
         this.bibli = false;  this.livre = false;  this.exemplaire = false;  this.location = false;  this.user = true;  this.admin = false;  this.support = false;

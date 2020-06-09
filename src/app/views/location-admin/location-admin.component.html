@@ -1,0 +1,15 @@
+<div id="locationadminContainer">
+    <div id="locationContainer" *ngIf="location">
+        <button mat-raised-button color="primary" (click)="back()">Retour</button>
+        <form [formGroup]="locationForm" (ngSubmit)="modify()">
+            <div id="erreur">{{ locationError }}</div>
+            <br>/!\ Valider le retour d'une location remet automatiquement l'exemplaire dans le status "disponible" /!\<br>
+            <mat-form-field>
+              <mat-label>date du retour</mat-label>
+              <input matInput formControlName="dateRetour" type="date" required>
+            </mat-form-field><br>
+            <br>
+            <button mat-raised-button type="submit" id="modifyBtn">Valider</button>
+        </form>
+    </div>
+</div>

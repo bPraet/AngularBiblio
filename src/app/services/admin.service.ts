@@ -144,4 +144,22 @@ export class AdminService {
       responseType: 'text'
     });
   }
+
+  getLocations(){
+    return this.http.get(`${API_URL}/admin/locations`);
+  }
+
+  getLocation(id){
+    return this.http.get(`${API_URL}/admin/location/${id}`);
+  }
+
+  modifyLocation(id, dateRetour){
+    return this.http.post(`${API_URL}/admin/location/${id}/update`, {},
+    {
+      responseType: 'text',
+      params : {
+        'dateRetour': dateRetour
+      }
+    });
+  }
 }

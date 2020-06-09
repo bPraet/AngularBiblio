@@ -39,6 +39,11 @@ ul{
     margin: auto;
 }
 
+.adminBox{
+    max-height: 200px;
+    overflow-y: auto;
+}
+
 mat-form-field{
     width: 50vw;
 }

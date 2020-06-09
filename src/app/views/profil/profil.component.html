@@ -12,27 +12,42 @@
   <div *ngIf='bibli'>
     <br>
     <button mat-raised-button [routerLink]="['/admin/bibli/add']" class="addBtn">Ajouter</button>
-    <ul>
-      <span *ngFor="let bibliotheque of bibliotheques"><li><a [routerLink]="['/admin/bibli', bibliotheque.id]" class="btn">Update</a> | 
-        <a (click)="deleteBibli(bibliotheque.id)" class="btn">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;Id: {{bibliotheque.id}}, Nom: {{bibliotheque.nom}}</li></span>
-    </ul>
+    <div class="adminBox">
+      <ul>
+        <span *ngFor="let bibliotheque of bibliotheques"><li><a [routerLink]="['/admin/bibli', bibliotheque.id]" class="btn">Update</a> | 
+          <a (click)="deleteBibli(bibliotheque.id)" class="btn">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;Id: {{bibliotheque.id}}, Nom: {{bibliotheque.nom}}</li></span>
+      </ul>
+    </div>
   </div>
   <div *ngIf='livre'>
     <br>
     <button mat-raised-button [routerLink]="['/admin/livre/add']" class="addBtn">Ajouter</button>
-    <ul>
-      <span *ngFor="let livre of livres"><li><a [routerLink]="['/admin/livre', livre.id]" class="btn">Update</a>&nbsp;&nbsp;&nbsp;&nbsp;Id: {{livre.id}}, Nom: {{livre.nom}}</li></span>
-    </ul>
+    <div class="adminBox">
+      <ul>
+        <span *ngFor="let livre of livres"><li><a [routerLink]="['/admin/livre', livre.id]" class="btn">Update</a>&nbsp;&nbsp;&nbsp;&nbsp;Id: {{livre.id}}, Nom: {{livre.nom}}</li></span>
+      </ul>
+    </div>
   </div>
   <div *ngIf='exemplaire'>
     <br>
     <button mat-raised-button [routerLink]="['/admin/exemplaire/add']" class="addBtn">Ajouter</button>
-    <ul>
-      <span *ngFor="let exemplaire of exemplaires"><li><a [routerLink]="['/admin/exemplaire', exemplaire.id]" class="btn">Update</a> | 
-        <a (click)="deleteExemplaire(exemplaire.id)" class="btn">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;Id: {{exemplaire.id}}, Bibliothèque: {{exemplaire.bibliotheque.nom}}</li></span>
-    </ul>
+    <div class="adminBox">
+      <ul>
+        <span *ngFor="let exemplaire of exemplaires"><li><a [routerLink]="['/admin/exemplaire', exemplaire.id]" class="btn">Update</a> | 
+          <a (click)="deleteExemplaire(exemplaire.id)" class="btn">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;Id: {{exemplaire.id}}, Bibliothèque: {{exemplaire.bibliotheque.nom}}</li></span>
+      </ul>
+    </div>
   </div>
-  <div *ngIf='location'>location</div>
+  <div *ngIf='location'>
+    <br>
+    <div class="adminBox">
+      <ul>
+        <span *ngFor="let location of locations"><li><a [routerLink]="['/admin/location', location.id]" class="btn" *ngIf="!location.dateRetour">Retour</a>
+          &nbsp;&nbsp;&nbsp;&nbsp;Id: {{location.id}}, Date début: {{dateMilitoDate(location.dateDebut)}}, Date fin: {{dateMilitoDate(location.dateFin)}}, 
+          {{location.exemplaire.bibliotheque.nom}}, Exemplaire Id: {{location.exemplaire.id}}<span *ngIf="location.dateRetour">, Date retour: {{dateMilitoDate(location.dateRetour)}}</span></li></span>
+      </ul>
+    </div>
+  </div>
   <div *ngIf='user'>user</div>
   <div *ngIf='admin'>admin</div>
   <div *ngIf='support'>support</div>
@@ -83,10 +98,15 @@
 
 <div *ngIf="!isAdmin">
   <br><hr>
+  <h3>Cotisations</h3>
+  <ul>
+    <span *ngFor="let cotisation of cotisations"><li>Id: {{cotisation.id}}, Date: {{dateMilitoDate(cotisation.date+10000000)}}, Bibliothèque: {{cotisation.bibliotheque.nom}}</li></span>
+  </ul>
+  <hr>
   <h3>Locations</h3>
   <ul>
-    <span *ngFor="let location of locations"><li>Id: {{location.id}}, Date début: {{dateMilitoDate(location.dateDebut)}}, Date fin: {{dateMilitoDate(location.dateFin)}}, 
-      {{location.exemplaire.bibliotheque.nom}}, Exemplaire Id: {{location.exemplaire.id}}
+    <span *ngFor="let location of locationsP"><li>Id: {{location.id}}, Date début: {{dateMilitoDate(location.dateDebut)}}, Date fin: {{dateMilitoDate(location.dateFin)}}, 
+      {{location.exemplaire.bibliotheque.nom}}, Exemplaire Id: {{location.exemplaire.id}}<span *ngIf="location.dateRetour">, Date retour: {{dateMilitoDate(location.dateRetour)}}</span>
     </li></span>
   </ul>
   <hr>
