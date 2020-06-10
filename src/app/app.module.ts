@@ -27,6 +27,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { ExemplaireAdminComponent } from './views/exemplaire-admin/exemplaire-admin.component';
 import { ExemplaireAdminAddComponent } from './views/exemplaire-admin-add/exemplaire-admin-add.component';
 import { LocationAdminComponent } from './views/location-admin/location-admin.component';
+import { CotisationComponent } from './views/cotisation/cotisation.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { LocationAdminComponent } from './views/location-admin/location-admin.co
     LivreAdminAddComponent,
     ExemplaireAdminComponent,
     ExemplaireAdminAddComponent,
-    LocationAdminComponent
+    LocationAdminComponent,
+    CotisationComponent
   ],
   imports: [
     BrowserModule,

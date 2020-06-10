@@ -1,0 +1,9 @@
+<div>
+    <h2>Bibliothèques où la cotisation est possible :</h2><hr>
+    <button mat-raised-button color="primary" (click)="back()">Retour</button><br>
+    <div id="erreur">{{ cotisationError }}</div>
+    <div *ngIf="bibliotheques == ''"><br>Vous avez cotisé à toutes les Bibliothèques disponibles</div>
+    <ul>
+        <span *ngFor="let bibliotheque of bibliotheques"><li><a (click)="cotiser(bibliotheque.id)" class="btn">Cotiser</a>&nbsp;&nbsp;&nbsp;&nbsp;Id: {{bibliotheque.id}}, Bibliothèque: {{bibliotheque.nom}}</li></span>
+    </ul>
+</div>

@@ -99,6 +99,7 @@
 <div *ngIf="!isAdmin">
   <br><hr>
   <h3>Cotisations</h3>
+  <button mat-raised-button [routerLink]="['/cotisation']">Ajouter</button>
   <ul>
     <span *ngFor="let cotisation of cotisations"><li>Id: {{cotisation.id}}, Date: {{dateMilitoDate(cotisation.date+10000000)}}, Bibliothèque: {{cotisation.bibliotheque.nom}}</li></span>
   </ul>

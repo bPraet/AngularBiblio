@@ -1,0 +1,18 @@
+h2{
+    margin-top: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.btn{
+    color: #990099;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#erreur{
+    text-align: center;
+    visibility: hidden;
+}

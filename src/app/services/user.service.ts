@@ -47,4 +47,15 @@ export class UserService {
     return this.http.get(`${API_URL}/cotisations`);
   }
 
+  getBibliCotisation(){
+    return this.http.get(`${API_URL}/bibliotheques`);
+  }
+
+  cotise(id){
+    return this.http.post(`${API_URL}/cotise/${id}`, {},
+    {
+      responseType: 'text'
+    });
+  }
+
 }

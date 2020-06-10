@@ -13,6 +13,7 @@ import { LivreAdminAddComponent } from './views/livre-admin-add/livre-admin-add.
 import { ExemplaireAdminAddComponent } from './views/exemplaire-admin-add/exemplaire-admin-add.component';
 import { ExemplaireAdminComponent } from './views/exemplaire-admin/exemplaire-admin.component';
 import { LocationAdminComponent } from './views/location-admin/location-admin.component';
+import { CotisationComponent } from './views/cotisation/cotisation.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'admin/exemplaire/add', component: ExemplaireAdminAddComponent},
   { path: 'admin/exemplaire/:id', component: ExemplaireAdminComponent},
   { path: 'admin/location/:id', component: LocationAdminComponent},
+  { path: 'cotisation', component: CotisationComponent},
   { path: '**', redirectTo: 'catalogue'}
 ];
 
