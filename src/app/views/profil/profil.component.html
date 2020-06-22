@@ -5,9 +5,6 @@
     <button mat-raised-button color="primary" (click)="changeViewAdmin('livre')">Livre</button>
     <button mat-raised-button color="primary" (click)="changeViewAdmin('exemplaire')">Exemplaire</button>
     <button mat-raised-button color="primary" (click)="changeViewAdmin('location')">Location</button>
-    <button mat-raised-button color="primary" (click)="changeViewAdmin('user')">Utilisateur</button>
-    <button mat-raised-button color="primary" (click)="changeViewAdmin('admin')">Administrateur</button>
-    <button mat-raised-button color="primary" (click)="changeViewAdmin('support')">Support</button>
   </div>
   <div *ngIf='bibli'>
     <br>
@@ -48,9 +45,6 @@
       </ul>
     </div>
   </div>
-  <div *ngIf='user'>user</div>
-  <div *ngIf='admin'>admin</div>
-  <div *ngIf='support'>support</div>
 
 </div>
 

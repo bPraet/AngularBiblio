@@ -28,7 +28,7 @@
     <mat-card>
       <div [routerLink]="admin ? ['/admin/livre', livre.id] : ['/livre', livre.id]">
       <mat-card-header>
-        <mat-card-title>{{livre.nom}}</mat-card-title>
+        <mat-card-title><span id="titre">{{livre.nom}}</span></mat-card-title>
         <mat-card-subtitle>{{livre.auteur}}</mat-card-subtitle>
       </mat-card-header>
       <span class="bookImg"><img mat-card-image src="http://covers.openlibrary.org/b/isbn/{{livre.isbn}}-L.jpg" alt="Mauvais ISBN"></span>
