@@ -51,7 +51,7 @@ sources : Bibliotheque.zip
 Toutes les actions des administrateurs sont enregistrées dans la base de données avec la raison mentionnée.
 <br><br>
 ## Contrôles
-Le contrôle des erreures a été fait pour toutes les fonctionnalités disponibles.<br>
+Le contrôle des erreures a été fait pour toutes les fonctionnalités disponibles (mot de passe, doublons...)<br>
 Mot de passe : 1 majuscule, 1 chiffre, 1 symbole minimum
 
 ------------------------------
