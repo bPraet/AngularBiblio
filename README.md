@@ -10,7 +10,7 @@ login : testLogin | mdp : testMdp1$
 login : Stimouk | mdp : test
 <br><br>
 ## Base de données
-Dump: bibliothequeDB.sql
+dump: bibliothequeDB.sql
 <br><br>
 ## Backend API Spring
 sources : Bibliotheque.zip
