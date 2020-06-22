@@ -47,6 +47,10 @@ sources : Bibliotheque.zip
 - Suppression exemplaire
 - Liste locations
 - Retour d'un livre
+Toutes les actions des administrateurs sont enregistrées dans la base de données avec la raison mentionnée.
 <br><br>
 ## Contrôles
 Le contrôle des erreures a été fait pour toutes les fonctionnalités disponibles.
+
+------------------------------
+Les fonctionnalités manquantes sont: paiement, gestion des admins, support(messages), mettre une amende.
