@@ -52,6 +52,6 @@ Toutes les actions des administrateurs sont enregistrées dans la base de donné
 <br><br>
 ## Contrôles
 Le contrôle des erreures a été fait pour toutes les fonctionnalités disponibles.
-
+Mot de passe : 1 majuscule, 1 chiffre, 1 symbole minimum
 ------------------------------
 Les fonctionnalités manquantes sont: paiement, gestion des admins, support(messages), mettre une amende.
