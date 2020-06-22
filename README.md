@@ -1,5 +1,6 @@
 # Bibliotheque
-Projet angular 3ème année Bachelier informatique de gestion. 
+Projet angular 3ème année Bachelier informatique de gestion.
+![alt text](https://github.com/bPraet/AngularBiblio/blob/master/accueil.png?raw=true)
 <br><br><br>
 ## Comptes test
 ### Utilisateur
