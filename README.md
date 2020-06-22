@@ -1,7 +1,7 @@
 # Bibliotheque
 
 Projet angular 3ème année Bachelier informatique de gestion. 
-<br><br><br><br>
+<br><br><br>
 ## Comptes test
 ### Utilisateur
 login : testLogin | mdp : testMdp1$
