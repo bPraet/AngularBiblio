@@ -9,3 +9,6 @@ login : testLogin | mdp : testMdp1$
 
 ### Administrateur
 login : Stimouk | mdp : test
+
+## Base de données
+Dump: bibliothequeDB.sql
